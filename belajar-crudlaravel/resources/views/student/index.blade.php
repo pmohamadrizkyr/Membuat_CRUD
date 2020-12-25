@@ -38,7 +38,7 @@
                                 {{-- CARA1 --}}
                                 {{-- <td><a href="{{ route('students.show', ['student' => $student->id]) }}">{{ $student->nik }}</a></td> --}}
                                 {{-- CARA2 --}}
-                                <td><a href="{{ url('/students/'.$student->id) }}">{{ $student->nik }}</a></td>
+                                <td><a href="{{ url('/students/'.$student->id) }}">{{ $student->nim }}</a></td>
                                 <td>{{ $student->nama }}</td>
                                 <td>{{ $student->jenis_kelamin == 'P' ? 'Perempuan' : 'Laki-laki' }}</td>
                                 <td>{{ $student->jurusan }}</td>

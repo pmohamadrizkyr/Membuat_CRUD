@@ -25,4 +25,4 @@ Route::get('/karyawans/{karyawan}', 'KaryawanController@show')->name('karyawans.
 Route::get('/students', 'StudentController@index')->name('students.index');
 Route::get('/students/create', 'StudentController@create')->name('students.create');
 Route::post('/students', 'StudentController@store')->name('students.store');
-Route::get('/students/{student}', 'StudentController@show')->name('students.show');
+Route::get('/students/{murid}', 'StudentController@show')->name('students.show');

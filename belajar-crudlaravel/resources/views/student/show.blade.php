@@ -12,15 +12,15 @@
         <div class="row">
             <div class="col-md-12">
                <div class="py-3">
-                   Biodata {{ $student->nama }}
+                   Biodata {{ $murid->nama }}
                </div>
                <hr>
                <ul>
-                   <li>Nik : {{ $student->nik }}</li>
-                   <li>Nama : {{ $student->nama }}</li>
-                   <li>Jenis kelamin : {{ $student->jenis_kelamin == 'P' ? 'Perempuan' : 'Laki-laki' }}</li>
-                   <li>Jurusan : {{ $student->jurusan }}</li>
-                   <li>Alamat : {{ $student->nik == '' ? 'N/A' : $student->alamat }}</li>
+                   <li>Nik : {{ $murid->nik }}</li>
+                   <li>Nama : {{ $murid->nama }}</li>
+                   <li>Jenis kelamin : {{ $murid->jenis_kelamin == 'P' ? 'Perempuan' : 'Laki-laki' }}</li>
+                   <li>Jurusan : {{ $murid->jurusan }}</li>
+                   <li>Alamat : {{ $murid->nik == '' ? 'N/A' : $murid->alamat }}</li>
                    <a href="{{ route('students.index') }}" class="btn btn-info">Kembali</a>
                </ul>
             </div>

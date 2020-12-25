@@ -9,15 +9,15 @@ class StudentController extends Controller
 {
     public function index(){
         $students = Student::all();
-        return view('student.index', ['students' => $students]);
+        return view('student.index', compact('students'));
     }
 
     public function create(){
         return view('student.create');
     }
 
-    public function show(Student $student){
-        return view('student.show', compact('student'));
+    public function show(Student $murid){
+        return view('student.show', compact('murid'));
     }
 
     public function store(Request $request){
