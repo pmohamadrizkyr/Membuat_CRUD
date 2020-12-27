@@ -51,5 +51,26 @@ class KaryawanController extends Controller
         return redirect()->route('karyawans.index');    
 
     }
+
+    public function edit(Karyawan $karyawan){
+        return view('karyawan.edit', compact('karyawan'));
+    }
+
+    public function update(Request $request, Karyawan $karyawan){
+        $validatedData = $request->validate([
+            'nik' => 'required|size:8|unique:karyawans,nik,'.$karyawan->id,
+            'nama' => 'required|min:3|max:50',
+            'jenis_kelamin' => 'required|in:P,L',
+            'bagian' => 'required',
+            'alamat' => ''
+        ]);
+        $karyawan->update($validatedData);
+        return redirect()->route('karyawans.show', ['karyawan' => $karyawan->id])->with('pesan', "Update Data {$validatedData['nama']} Berhasil");
+    }
+
+    public function destroy(Karyawan $karyawan){
+        $karyawan->delete();
+        return redirect()->route('karyawans.index')->with('hapus', "Hapus data $karyawan->nama Berhasil");
+    }
 }
 

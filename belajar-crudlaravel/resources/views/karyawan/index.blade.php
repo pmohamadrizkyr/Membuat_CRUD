@@ -20,6 +20,11 @@
                         {{ session('pesan') }}
                     </div>
                 @endif
+                @if (session('hapus'))
+                    <div class="alert alert-danger">
+                        {{ session('hapus') }}
+                    </div>
+                @endif
                 <table class="table table-striped">
                     <thead>
                         <tr>

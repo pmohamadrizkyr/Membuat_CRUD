@@ -11,10 +11,22 @@
     <div class="container mt-3">
         <div class="row">
             <div class="col-md-12">
-               <div class="py-3">
-                   Biodata {{ $karyawan->nama }}
+               <div class="pt-3 d-flex justify-content-end align-items-center" >
+                   <h1 class="h1 mr-auto">Biodata {{ $karyawan->nama }}</h1>
+                   <a href="{{ route('karyawans.edit', $karyawan->id) }}" class="btn btn-primary">Edit Data</a>
+                   <br>
+                    <form action="{{ route('karyawans.destroy', $karyawan->id) }}" method="POST">
+                        @method('DELETE')
+                        @csrf
+                        <button type="submit" class="btn btn-danger">Hapus</button>
+                    </form>
                </div>
                <hr>
+               @if (session('pesan'))
+                    <div class="alert alert-success" role="alert">
+                    {{ session('pesan') }}
+                    </div>
+                @endif
                <ul>
                    <li>Nik : {{ $karyawan->nik }}</li>
                    <li>Nama : {{ $karyawan->nama }}</li>

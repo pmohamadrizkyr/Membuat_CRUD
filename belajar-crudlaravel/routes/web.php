@@ -17,10 +17,14 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/karyawans', 'KaryawanController@index')->name('karyawans.index');
-Route::get('/karyawans/create', 'KaryawanController@create')->name('karyawans.create');
-Route::post('/karyawans', 'KaryawanController@store')->name('karyawans.store');
-Route::get('/karyawans/{karyawan}', 'KaryawanController@show')->name('karyawans.show');
+// Route::get('/karyawans', 'KaryawanController@index')->name('karyawans.index');
+// Route::get('/karyawans/create', 'KaryawanController@create')->name('karyawans.create');
+// Route::post('/karyawans', 'KaryawanController@store')->name('karyawans.store');
+// Route::get('/karyawans/{karyawan}', 'KaryawanController@show')->name('karyawans.show');
+// Route::get('/karyawans/{karyawan}/edit', 'KaryawanController@edit')->name('karyawans.edit');
+// Route::patch('/karyawans/{karyawan}', 'KaryawanController@update')->name('karyawans.update');
+// Route::delete('/karyawans/{karyawan}', 'KaryawanController@destroy')->name('karyawans.destroy');
+Route::resource('/karyawans', 'KaryawanController');
 
 Route::get('/students', 'StudentController@index')->name('students.index');
 Route::get('/students/create', 'StudentController@create')->name('students.create');
