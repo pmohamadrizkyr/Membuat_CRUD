@@ -19,7 +19,7 @@
                    @method('PATCH')
                     <div class="form-group">
                         <label for="nik">Nik</label>
-                        <input type="text" name="nik" id="nik" class="form-control @error('nik')is-invalid @enderror" value="{{ old('nik') ?? $karyawan->nik }}">
+                        <input type="text" name="nik" id="nik" class="form-control @error('nik')is-invalid @enderror" value="{{ old('nik') ??$karyawan->nik }}">
                         @error('nik')
                             <div class="alert alert-danger">{{ $message }}</div>  
                         @enderror

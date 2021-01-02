@@ -26,6 +26,14 @@ Route::get('/', function () {
 // Route::delete('/karyawans/{karyawan}', 'KaryawanController@destroy')->name('karyawans.destroy');
 Route::resource('/karyawans', 'KaryawanController');
 
+Route::get('/file-upload', 'FileUploadController@fileUpload');
+Route::post('/file-upload', 'FileUploadController@prosesFileUpload');
+
+Route::get('/file-upload-rename', 'FileUploadController@fileUploadRename');
+Route::post('/file-upload-rename', 'FileUploadController@prosesFileUploadRename');
+
+
+
 Route::get('/students', 'StudentController@index')->name('students.index');
 Route::get('/students/create', 'StudentController@create')->name('students.create');
 Route::post('/students', 'StudentController@store')->name('students.store');
