@@ -12,15 +12,28 @@
         <div class="row">
             <div class="col-md-12">
                <div class="py-3">
-                   Biodata {{ $murid->nama }}
-               </div>
+                    Biodata {{ $murid->nama }}
+                    <a href="{{ route('students.edit', $murid->id) }}" class="btn btn-primary"> Edit Data</a>
+                    <hr>
+                    <form action="{{ route ('students.destroy', $murid->id) }}" method="POST">
+                        @csrf
+                        @method('delete')
+                        <button class="btn btn-primary" type="submit">Hapus</button>
+                    </form>
+                </div>
                <hr>
+               @if (session('pesan'))
+                <div class="alert alert-success" role="alert">
+                    {{session('pesan')}}
+                </div>
+                   
+               @endif
                <ul>
-                   <li>Nik : {{ $murid->nik }}</li>
+                   <li>Nim : {{ $murid->nim }}</li>
                    <li>Nama : {{ $murid->nama }}</li>
                    <li>Jenis kelamin : {{ $murid->jenis_kelamin == 'P' ? 'Perempuan' : 'Laki-laki' }}</li>
                    <li>Jurusan : {{ $murid->jurusan }}</li>
-                   <li>Alamat : {{ $murid->nik == '' ? 'N/A' : $murid->alamat }}</li>
+                   <li>Alamat : {{ $murid->nim == '' ? 'N/A' : $murid->alamat }}</li>
                    <a href="{{ route('students.index') }}" class="btn btn-info">Kembali</a>
                </ul>
             </div>
